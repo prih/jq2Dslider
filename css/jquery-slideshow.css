@@ -1,0 +1,43 @@
+.slideshow {
+	position: relative;
+}
+.slideshow .control_bar {
+	width: 70px;
+	height: 70px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: rgba(255,255,255,0.5);
+	border-radius: 5px;
+}
+.slideshow .control_bar.disabled {
+	display: none;
+}
+.slideshow .control_bar div {
+	width: 32px;
+	height: 32px;
+	position: absolute;
+}
+.slideshow .control_bar div.disabled {
+	opacity: 0.4;
+}
+.slideshow .control_bar .left {
+	background: url(slideshow/left_icon.png);
+	top: 19px;
+	left: 0;
+}
+.slideshow .control_bar .right {
+	background: url(slideshow/right_icon.png);
+	top: 19px;
+	right: 0;
+}
+.slideshow .control_bar .up {
+	background: url(slideshow/up_icon.png);
+	top: 0;
+	left: 19px;
+}
+.slideshow .control_bar .down {
+	background: url(slideshow/down_icon.png);
+	bottom: 0;
+	left: 19px;
+}

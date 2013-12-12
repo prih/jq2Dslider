@@ -7,11 +7,11 @@
 			this.css('height', options.height+'px');
 		}
 		if (typeof options.slides != 'undefined') {
-			
+			buildSlideHtml(options);
 		}
 	};
 
-	var showSlide = function(slide) {
+	var buildSlideHtml = function(options) {
 		// 
 	};
 })(jQuery);

@@ -29,6 +29,8 @@
 
 	var objectQueue = [];
 
+	var obj_id = 0;
+
 	var indexObjectModel = function() {
 		if (!objectQueue.length) return false;
 		var obj = objectQueue.shift();
@@ -36,6 +38,7 @@
 			for (var i = 0; i < obj.length; i++) {
 				obj[i].parent_arr = obj;
 				obj[i].my_num = i;
+				obj[i].my_id = ++obj_id;
 				if (typeof obj[i]['left'] != 'undefined') {
 					obj[i]['left'].my_type = 'left';
 					objectQueue.push(obj[i]['left']);
@@ -67,7 +70,13 @@
 	var cur_slide_id = null;
 	var work_animate = false;
 
+	var slidesCache = {};
+
 	var createSlide = function(slide) {
+		if (typeof slidesCache[slide.my_id] != 'undefined') {
+			return slidesCache[slide.my_id];
+		}
+
 		var slide_wrap = document.createElement('div');
 		slide_wrap.className = 'slide';
 		slide_wrap.style.width = width+'px';
@@ -88,7 +97,10 @@
 			slide_wrap.style.background = slide.bg;
 		}
 
-		return slide_wrap;
+		var wrap = document.createElement('div');
+		wrap.appendChild(slide_wrap);
+
+		return wrap.innerHTML;
 	};
 
 	var createControl = function() {
@@ -179,7 +191,8 @@
 	};
 
 	var animateNewSlide = function(slide, type, cb) {
-		var slide_obj = createSlide(slide);
+		var slide_text = createSlide(slide);
+		var slide_obj = $(slide_text)[0];
 		switch(type) {
 			case 'left':
 				slide_obj.style.top = 0;

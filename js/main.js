@@ -33,4 +33,23 @@ $(document).ready(function(){
 			]
 		}]
 	});
+
+	$('#slides2').slideshow({
+		width: 800,
+		height: 600,
+		slides: [{
+			img: 'assets/img1.jpg',
+			left: [
+				{
+					img: 'assets/img2.jpg',
+				},
+				{
+					img: 'assets/img3.jpg',
+				},
+				{
+					img: 'assets/img6.jpg',
+				},
+			]
+		}]
+	});
 });

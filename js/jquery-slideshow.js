@@ -185,7 +185,7 @@
 							self.animateNewSlide(cur.parent_arr[--self.cur_slide_id], 'up');
 					}
 				}
-				if (typeof cur.parent_arr[self.cur_slide_id] != 'undefined')
+				if (typeof cur.parent_arr != 'undefined')
 					self.checkControlMethod(cur.parent_arr[self.cur_slide_id]);
 			}
 		};

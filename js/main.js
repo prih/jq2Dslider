@@ -21,6 +21,14 @@ $(document).ready(function(){
 							img: 'assets/img5.jpg',
 						}
 					]
+				},
+				{
+					img: 'assets/img6.jpg',
+				},
+			],
+			right: [
+				{
+					img: 'assets/img7.jpg',
 				}
 			]
 		}]

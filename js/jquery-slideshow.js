@@ -110,7 +110,7 @@
 				var animate_opt = { left: '+='+width };
 				break;
 		}
-		$('div.slide', self).animate(, {queue: true, duration: 1000, complete: function(){
+		$('div.slide', self).animate(animate_opt, {queue: true, duration: 1000, complete: function(){
 			if (this == slide_obj) cur_slide = slide_obj; else $(this).remove();
 		}});
 	};
